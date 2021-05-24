@@ -1,5 +1,4 @@
 import { promises as fs } from 'fs';
-import * as github from '@actions/github';
 import { Config, ToolType } from './config';
 
 export interface BenchmarkResult {
@@ -138,25 +137,13 @@ function getHumanReadableUnitValue(seconds: number): [number, string] {
     }
 }
 
-function getCommit(): Commit {
+function getCommit(config: Config): Commit {
     /* eslint-disable @typescript-eslint/camelcase */
-    if (github.context.payload.head_commit) {
-        return github.context.payload.head_commit;
-    }
-
-    const pr = github.context.payload.pull_request;
-    if (!pr) {
-        throw new Error(
-            `No commit information is found in payload: ${JSON.stringify(github.context.payload, null, 2)}`,
-        );
-    }
-
-    // On pull_request hook, head_commit is not available
-    const message: string = pr.title;
-    const id: string = pr.head.sha;
-    const timestamp: string = pr.head.repo.updated_at;
-    const url = `${pr.html_url}/commits/${id}`;
-    const name: string = pr.head.user.login;
+    const id: string = config.commitId;
+    const message: string = config.commitMessage;
+    const timestamp: string = config.commitTimestamp;
+    const url = config.commitURL;
+    const name: string = config.commitName;
     const user = {
         name,
         username: name, // XXX: Fallback, not correct
@@ -447,7 +434,7 @@ export async function extractResult(config: Config): Promise<Benchmark> {
         throw new Error(`No benchmark result was found in ${config.outputFilePath}. Benchmark output was '${output}'`);
     }
 
-    const commit = getCommit();
+    const commit = getCommit(config);
 
     return {
         commit,

@@ -47,6 +47,11 @@ describe('configFromJobInput()', function() {
         'alert-comment-cc-users': '',
         'external-data-json-path': '',
         'max-items-in-chart': '',
+        'commit-id': '',
+        'commit-message': '',
+        'commit-timestamp': '',
+        'commit-url': '',
+        'commit-name': '',
     };
 
     const validation_tests = [
@@ -188,6 +193,11 @@ describe('configFromJobInput()', function() {
         hasExternalDataJsonPath: boolean;
         maxItemsInChart: null | number;
         failThreshold: number | null;
+        commitId: string;
+        commitMessage: string;
+        commitTimestamp: string;
+        commitURL: string;
+        commitName: string;
     }
 
     const defaultExpected: ExpectedResult = {
@@ -204,6 +214,11 @@ describe('configFromJobInput()', function() {
         hasExternalDataJsonPath: false,
         maxItemsInChart: null,
         failThreshold: null,
+        commitId: '',
+        commitMessage: '',
+        commitTimestamp: '',
+        commitURL: '',
+        commitName: '',
     };
 
     const returnedConfigTests = [

@@ -197,6 +197,11 @@ describe('writeBenchmark()', function() {
             externalDataJsonPath: dataJson,
             maxItemsInChart: null,
             failThreshold: 2.0,
+            commitId: '123456789',
+            commitMessage: 'dummy',
+            commitTimestamp: 'timeDummy',
+            commitURL: 'urldummy',
+            commitName: 'dummyName',
         };
 
         const savedRepository = gitHubContext.payload.repository;
@@ -905,6 +910,11 @@ describe('writeBenchmark()', function() {
             externalDataJsonPath: undefined,
             maxItemsInChart: null,
             failThreshold: 2.0,
+            commitId: '123456789',
+            commitMessage: 'dummy',
+            commitTimestamp: 'timeDummy',
+            commitURL: 'urldummy',
+            commitName: 'dummyName',
         };
 
         function gitHistory(
