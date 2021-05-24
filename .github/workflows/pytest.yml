@@ -1,5 +1,6 @@
 name: Python Example with pytest
 on:
+  pull_request:
   push:
     branches:
       - master
