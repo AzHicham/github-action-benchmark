@@ -22,6 +22,11 @@ export interface Config {
     alertCommentCcUsers: string[];
     externalDataJsonPath: string | undefined;
     maxItemsInChart: number | null;
+    commitId: string;
+    commitMessage: string;
+    commitTimestamp: string;
+    commitURL: string;
+    commitName: string;
 }
 
 export const VALID_TOOLS: ToolType[] = ['cargo', 'go', 'benchmarkjs', 'pytest', 'googlecpp', 'catch2'];
@@ -221,6 +226,11 @@ export async function configFromJobInput(): Promise<Config> {
     let externalDataJsonPath: undefined | string = core.getInput('external-data-json-path');
     const maxItemsInChart = getUintInput('max-items-in-chart');
     let failThreshold = getPercentageInput('fail-threshold');
+    const commitId: string = core.getInput('commit-id');
+    const commitMessage: string = core.getInput('commit-message');
+    const commitTimestamp: string = core.getInput('commit-timestamp');
+    const commitURL: string = core.getInput('commit-url');
+    const commitName: string = core.getInput('commit-name');
 
     validateToolType(tool);
     outputFilePath = await validateOutputFilePath(outputFilePath);
@@ -262,5 +272,10 @@ export async function configFromJobInput(): Promise<Config> {
         externalDataJsonPath,
         maxItemsInChart,
         failThreshold,
+        commitId,
+        commitMessage,
+        commitTimestamp,
+        commitURL,
+        commitName,
     };
 }

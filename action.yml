@@ -69,6 +69,21 @@ inputs:
   max-items-in-chart:
     description: 'Max data points in a benchmark chart to avoid making the chart too busy. Value must be unsigned integer. No limit by default'
     required: false
+  commit-id:
+    description: 'commit sha'
+    required: true
+  commit-message:
+    description: 'commit message'
+    required: true
+  commit-timestamp:
+    description: 'commit timestamp'
+    required: true
+  commit-url:
+    description: 'commit url'
+    required: true
+  commit-name:
+    description: 'commit name'
+    required: true
 
 runs:
   using: 'node12'
