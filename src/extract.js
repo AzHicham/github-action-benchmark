@@ -1,14 +1,6 @@
 "use strict";
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = require("fs");
-const github = __importStar(require("@actions/github"));
 function getHumanReadableUnitValue(seconds) {
     if (seconds < 1.0e-6) {
         return [seconds * 1e9, 'nsec'];
@@ -23,21 +15,13 @@ function getHumanReadableUnitValue(seconds) {
         return [seconds, 'sec'];
     }
 }
-function getCommit() {
+function getCommit(config) {
     /* eslint-disable @typescript-eslint/camelcase */
-    if (github.context.payload.head_commit) {
-        return github.context.payload.head_commit;
-    }
-    const pr = github.context.payload.pull_request;
-    if (!pr) {
-        throw new Error(`No commit information is found in payload: ${JSON.stringify(github.context.payload, null, 2)}`);
-    }
-    // On pull_request hook, head_commit is not available
-    const message = pr.title;
-    const id = pr.head.sha;
-    const timestamp = pr.head.repo.updated_at;
-    const url = `${pr.html_url}/commits/${id}`;
-    const name = pr.head.user.login;
+    const id = config.commitId;
+    const message = config.commitMessage;
+    const timestamp = config.commitTimestamp;
+    const url = config.commitURL;
+    const name = config.commitName;
     const user = {
         name,
         username: name,
@@ -278,7 +262,7 @@ async function extractResult(config) {
     if (benches.length === 0) {
         throw new Error(`No benchmark result was found in ${config.outputFilePath}. Benchmark output was '${output}'`);
     }
-    const commit = getCommit();
+    const commit = getCommit(config);
     return {
         commit,
         date: Date.now(),

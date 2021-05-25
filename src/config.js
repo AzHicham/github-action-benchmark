@@ -186,6 +186,11 @@ async function configFromJobInput() {
     let externalDataJsonPath = core.getInput('external-data-json-path');
     const maxItemsInChart = getUintInput('max-items-in-chart');
     let failThreshold = getPercentageInput('fail-threshold');
+    const commitId = core.getInput('commit-id');
+    const commitMessage = core.getInput('commit-message');
+    const commitTimestamp = core.getInput('commit-timestamp');
+    const commitURL = core.getInput('commit-url');
+    const commitName = core.getInput('commit-name');
     validateToolType(tool);
     outputFilePath = await validateOutputFilePath(outputFilePath);
     validateGhPagesBranch(ghPagesBranch);
@@ -225,6 +230,11 @@ async function configFromJobInput() {
         externalDataJsonPath,
         maxItemsInChart,
         failThreshold,
+        commitId,
+        commitMessage,
+        commitTimestamp,
+        commitURL,
+        commitName,
     };
 }
 exports.configFromJobInput = configFromJobInput;
