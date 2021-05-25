@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1621927543042,
+  "lastUpdate": 1621927546130,
   "entries": {
     "Rust Benchmark": [
       {
@@ -18213,6 +18213,44 @@ window.BENCHMARK_DATA = {
             "range": "±0.12%",
             "unit": "ops/sec",
             "extra": "91 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mistermarok1@live.fr",
+            "name": "HichamAz",
+            "username": "AzHicham"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c4685e766be5b180f9d5f1c360b08f2ea015a3e0",
+          "message": "Merge pull request #7 from AzHicham/input-commit-info\n\nadd commit info as input",
+          "timestamp": "2021-05-25T09:25:13+02:00",
+          "tree_id": "9810783ed9bb631c9d7f64e34e7739f003d4460c",
+          "url": "https://github.com/AzHicham/github-action-benchmark/commit/c4685e766be5b180f9d5f1c360b08f2ea015a3e0"
+        },
+        "date": 1621927544129,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "fib(10)",
+            "value": 1124566,
+            "range": "±0.98%",
+            "unit": "ops/sec",
+            "extra": "89 samples"
+          },
+          {
+            "name": "fib(20)",
+            "value": 9139,
+            "range": "±1.05%",
+            "unit": "ops/sec",
+            "extra": "86 samples"
           }
         ]
       }
