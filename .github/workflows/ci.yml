@@ -28,7 +28,7 @@ jobs:
           pytest bench.py --benchmark-json output.json
       - name:
         run: |
-          echo ' ${{ JSON.stringify(github.event) }} '
+          echo ' ${{ github.event }} '
       - name: Store benchmark result
         if: ${{ github.event_name == 'push' }}
         uses: ./
