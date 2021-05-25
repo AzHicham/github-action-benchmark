@@ -39,8 +39,8 @@ jobs:
           commit-id: ${{ github.event.head_commit.id }}
           commit-message: ${{ github.event.head_commit.message }}
           commit-timestamp: ${{ github.event.head_commit.timestamp }}
-          commit-url: ${{ github.event.repository.html_url }}
-          commit-name: ${{ github.event.head_commit.author.name }}/commits/${{ github.event.head_commit.id }}
+          commit-url: ${{ github.event.repository.html_url }}/commits/${{ github.event.head_commit.id }}
+          commit-name: ${{ github.event.head_commit.author.name }}
       - name: Store benchmark result
         if: ${{ github.event_name == 'pull_request' }}
         uses: ./
