@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1621925604963,
+  "lastUpdate": 1621925865055,
   "entries": {
     "Rust Benchmark": [
       {
@@ -22957,6 +22957,40 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0004070527073713532",
             "extra": "mean: 2.831108623853892 msec\nrounds: 327"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "AzHicham",
+            "username": "AzHicham"
+          },
+          "committer": {
+            "name": "AzHicham",
+            "username": "AzHicham"
+          },
+          "id": "bb39f9e8318b514ca6041379e25f35997dc62961",
+          "message": "add commit info as input",
+          "timestamp": "2021-05-24T19:10:28Z",
+          "url": "https://github.com/AzHicham/github-action-benchmark/pull/7/commits/bb39f9e8318b514ca6041379e25f35997dc62961"
+        },
+        "date": 1621925863617,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "bench.py::test_fib_10",
+            "value": 51205.354596626734,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0000033551191579411106",
+            "extra": "mean: 19.52920759708746 usec\nrounds: 33671"
+          },
+          {
+            "name": "bench.py::test_fib_20",
+            "value": 407.93109161023,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00022856500168492544",
+            "extra": "mean: 2.451394415788929 msec\nrounds: 380"
           }
         ]
       }
