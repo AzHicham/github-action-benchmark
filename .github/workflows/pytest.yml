@@ -17,7 +17,7 @@ jobs:
           pip install -r requirements.txt
           pytest bench.py --benchmark-json output.json
       - name: Store benchmark result
-        uses: AzHicham/github-action-benchmark@v1.9.0
+        uses: AzHicham/github-action-benchmark@v1
         with:
           name: Python Benchmark with pytest-benchmark
           tool: 'pytest'
