@@ -13,7 +13,7 @@ and monitor the results on GitHub Actions workflow.
 - This action can detect possible performance regressions by comparing benchmark results. When
   benchmark results get worse than previous exceeding the specified threshold, it can raise an alert
   via commit comment or workflow failure.
-
+ 
 This action currently supports the following tools:
 
 - [`cargo bench`][cargo-bench] for Rust projects
