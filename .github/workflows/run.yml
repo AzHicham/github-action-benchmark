@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/github-script@v4
         with:
-          script: echo ${{ JSON.srtringify(github.event.workflow_run) }}
+          script: echo ${{ JSON.stringify(github.event.workflow_run) }}
       - name: Hello
         env:
           DUMMY: ${{secrets.DUMMY}}
