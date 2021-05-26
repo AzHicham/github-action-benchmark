@@ -15,7 +15,7 @@ jobs:
         run: sudo apt update && sudo apt install -y jq
       - name: log
         run: | 
-           echo "${{ toJson(github.event) }}" | jq
+           echo "${{ toJson(github) }}" | jq
       - name: Hello
         env:
           DUMMY: ${{secrets.DUMMY}}
