@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1622020537247,
+  "lastUpdate": 1622020541103,
   "entries": {
     "Rust Benchmark": [
       {
@@ -18403,6 +18403,44 @@ window.BENCHMARK_DATA = {
             "range": "±0.96%",
             "unit": "ops/sec",
             "extra": "87 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mistermarok1@live.fr",
+            "name": "HichamAz",
+            "username": "AzHicham"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "20a4a5751b55a84db3f127401ca7d0abc1831dbc",
+          "message": "Update run.yml",
+          "timestamp": "2021-05-26T11:15:09+02:00",
+          "tree_id": "3c36e31bc3d2de0794905df4bb0d439f81c0fee8",
+          "url": "https://github.com/AzHicham/github-action-benchmark/commit/20a4a5751b55a84db3f127401ca7d0abc1831dbc"
+        },
+        "date": 1622020539398,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "fib(10)",
+            "value": 1159896,
+            "range": "±0.86%",
+            "unit": "ops/sec",
+            "extra": "86 samples"
+          },
+          {
+            "name": "fib(20)",
+            "value": 10251,
+            "range": "±1.02%",
+            "unit": "ops/sec",
+            "extra": "86 samples"
           }
         ]
       }
