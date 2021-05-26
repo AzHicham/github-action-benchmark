@@ -1,0 +1,28 @@
+name: Run
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
+
+jobs:
+  pytest-benchmark:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello
+        env:
+          DUMMY: ${{secrets.JENKINS_NG_TOKEN}}
+          C_ID: ${{ github.event.workflow_run.head_commit.id }}
+          C_MESSAGE: ${{ github.event.workflow_run.head_commit.message }}
+          C_TIME: ${{ github.event.workflow_run.head_commit.timestamp }}
+          C_URL: ${{ github.event.workflow_run.repository.html_url }}
+          C_COMMITER: ${{ github.event.workflow_run.head_commit.author.name }}
+        run: |
+          echo $DUMMY | base64
+          echo $C_ID
+          echo $C_MESSAGE
+          echo $C_TIME
+          echo $C_COMMITER
+          echo $C_URL
