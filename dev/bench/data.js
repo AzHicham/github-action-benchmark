@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1622017247735,
+  "lastUpdate": 1622017251620,
   "entries": {
     "Rust Benchmark": [
       {
@@ -18251,6 +18251,44 @@ window.BENCHMARK_DATA = {
             "range": "±1.05%",
             "unit": "ops/sec",
             "extra": "86 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hicham.azimani@kisio.com",
+            "name": "Hicham Azimani",
+            "username": "AzHicham"
+          },
+          "committer": {
+            "email": "hicham.azimani@kisio.com",
+            "name": "Hicham Azimani",
+            "username": "AzHicham"
+          },
+          "distinct": true,
+          "id": "cfdbaa46813b94b14fa228947294da40386ecb7d",
+          "message": "test",
+          "timestamp": "2021-05-26T10:20:13+02:00",
+          "tree_id": "f7ad8014f64a4deee34cb8e5a1394cb120f0496d",
+          "url": "https://github.com/AzHicham/github-action-benchmark/commit/cfdbaa46813b94b14fa228947294da40386ecb7d"
+        },
+        "date": 1622017249483,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "fib(10)",
+            "value": 1192912,
+            "range": "±1.22%",
+            "unit": "ops/sec",
+            "extra": "85 samples"
+          },
+          {
+            "name": "fib(20)",
+            "value": 9196,
+            "range": "±1.53%",
+            "unit": "ops/sec",
+            "extra": "80 samples"
           }
         ]
       }
