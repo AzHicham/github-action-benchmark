@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1622017519359,
+  "lastUpdate": 1622019786467,
   "entries": {
     "Rust Benchmark": [
       {
@@ -23491,6 +23491,44 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.00003225004913974641",
             "extra": "mean: 2.654802973404246 msec\nrounds: 376"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mistermarok1@live.fr",
+            "name": "HichamAz",
+            "username": "AzHicham"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9fbc78499adb8b3a5a54ffae44b25d4f5df1c409",
+          "message": "Update run.yml",
+          "timestamp": "2021-05-26T11:02:35+02:00",
+          "tree_id": "d54b97471cbb9820509677b589e403d2c4c41d56",
+          "url": "https://github.com/AzHicham/github-action-benchmark/commit/9fbc78499adb8b3a5a54ffae44b25d4f5df1c409"
+        },
+        "date": 1622019784366,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "bench.py::test_fib_10",
+            "value": 41100.08170140038,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000022302170321438666",
+            "extra": "mean: 24.330851876772 usec\nrounds: 31251"
+          },
+          {
+            "name": "bench.py::test_fib_20",
+            "value": 341.3255195560758,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00029892499441564575",
+            "extra": "mean: 2.929754567723471 msec\nrounds: 347"
           }
         ]
       }
