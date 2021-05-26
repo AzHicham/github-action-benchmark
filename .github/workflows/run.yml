@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install
-        run: sudo apt update && apt install -y jq
+        run: sudo apt update && sudo apt install -y jq
       - name: log
         run: | 
            echo "${{ github.event.workflow_run }}" | jq
