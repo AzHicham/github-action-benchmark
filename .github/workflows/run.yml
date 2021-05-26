@@ -12,6 +12,9 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/github-script@v4
+      with:
+        script: echo ${{ JSON.srtringify(github.event.workflow_run) }}
       - name: Hello
         env:
           DUMMY: ${{secrets.DUMMY}}
