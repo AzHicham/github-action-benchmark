@@ -8,6 +8,7 @@ on:
 
 jobs:
   pytest-benchmark:
+    if: contains(github.event.workflow_run.labels.*.name, 'run_on_artemis')
     name: Test
     runs-on: ubuntu-latest
     steps:
